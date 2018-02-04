@@ -7,8 +7,6 @@ JOIN featureloc location ON f.feature_id = location.feature_id
 WHERE polypeptide.name = 'polypeptide'
 AND bifunctional.value LIKE '%bifunctional%';
 
-LEFT(full_name, 32)
-
 SELECT f.uniquename, LEFT(bifunctional.value, 30), location.fmin, location.fmax, location.strand
 FROM feature f
 JOIN cvterm polypeptide ON f.type_id = polypeptide.cvterm_id
